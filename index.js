@@ -1,7 +1,15 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // steps
+  for (let i = 0; i < array.length; i++) {
+    const complement = target - array[i];
+    for (let j = i+1; j < array.length; j++){
+      //n*n
+      if (array[j] === complement) return true;
+  }
 }
-
+// step 1
+return false;
+}
 /* 
   Write the Big O time complexity of your function here
 */
