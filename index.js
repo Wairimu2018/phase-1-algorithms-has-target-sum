@@ -1,14 +1,20 @@
 function hasTargetSum(array, target) {
-  // steps
-  for (let i = 0; i < array.length; i++) {
-    const complement = target - array[i];
-    for (let j = i+1; j < array.length; j++){
-      //n*n
-      if (array[j] === complement) return true;
+  // step 1
+  //for (let i = 0; i < array.length; i++) {
+    const seenNumbers = new Set();
+    //iterate over the array of numbers
+    for (const number of array){
+      //n steps
+    const complement = target - number;
+    //for (let j = i+1; j < array.length; j++){
+      //n steps
+      if (seenNumbers.has(complement)) return true;
+      //n steps
+      seenNumbers.add(number);
   }
-}
 // step 1
 return false;
+// o(3n+2)
 }
 /* 
   Write the Big O time complexity of your function here
